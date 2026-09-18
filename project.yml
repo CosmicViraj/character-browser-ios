@@ -1,0 +1,22 @@
+# Optional: only needed if you'd rather regenerate the .xcodeproj with XcodeGen
+# (brew install xcodegen && xcodegen generate). The checked-in project works as is.
+name: CharacterBrowser
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  CharacterBrowser:
+    type: application
+    platform: iOS
+    sources: [CharacterBrowser]
+    settings:
+      GENERATE_INFOPLIST_FILE: YES
+      INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+      INFOPLIST_KEY_UILaunchScreen_Generation: YES
+  CharacterBrowserTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [CharacterBrowserTests]
+    dependencies:
+      - target: CharacterBrowser
